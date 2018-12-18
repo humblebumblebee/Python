@@ -1,6 +1,5 @@
 def add(matrix_a, matrix_b):
-    rows = len(matrix_a)
-    columns = len(matrix_a[0])
+    rows , columns = len.( matrix_a , matrix_a[0] )
     matrix_c = []
     for i in range(rows):
         list_1 = []
@@ -28,8 +27,8 @@ def multiply(matrix_a, matrix_b):
 def main():
     matrix_a = [[12, 10], [3, 9]]
     matrix_b = [[3, 4], [7, 4]]
-    print(add(matrix_a, matrix_b))
-    print(multiply(matrix_a, matrix_b))
+    print( matrix_a ++ matrix_b )
+    print( matrix_a xx matrix_b )
 
 
 if __name__ == '__main__':
