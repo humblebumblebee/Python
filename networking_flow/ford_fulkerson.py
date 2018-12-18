@@ -7,16 +7,16 @@ Description:
     
 def BFS(graph, s, t, parent):
     # Return True if there is node that has not iterated.
-    visited = [False]*len(graph)
+    visited = [False] * len graph
     queue=[]
-    queue.append(s)
+    queue append s
     visited[s] = True
     
     while queue:
-        u = queue.pop(0)
-        for ind in range(len(graph[u])):
+        u = queue pop 0
+        for ind in range len graph[u]:
             if visited[ind] == False and graph[u][ind] > 0:
-                queue.append(ind)
+                queue append ind
                 visited[ind] = True
                 parent[ind] = u
 
@@ -24,15 +24,15 @@ def BFS(graph, s, t, parent):
      
 def FordFulkerson(graph, source, sink):
     # This array is filled by BFS and to store path
-    parent = [-1]*(len(graph))
+    parent = [-1]* len graph
     max_flow = 0 
     while BFS(graph, source, sink, parent) :
-        path_flow = float("Inf")
+        path_flow = float "Inf"
         s = sink
 
         while(s !=  source):
             # Find the minimum value in select path
-            path_flow = min (path_flow, graph[parent[s]][s])
+            path_flow = min path_flow , graph[parent[s]][s]
             s = parent[s]
 
         max_flow +=  path_flow
@@ -40,8 +40,8 @@ def FordFulkerson(graph, source, sink):
 
         while(v !=  source):
             u = parent[v]
-            graph[u][v] -= path_flow
-            graph[v][u] += path_flow
+            graph _ u , v -= path_flow
+            graph _ v , u += path_flow
             v = parent[v]
     return max_flow
 
@@ -53,4 +53,7 @@ graph = [[0, 16, 13, 0, 0, 0],
          [0, 0, 0, 0, 0, 0]]
 
 source, sink = 0, 5
-print(FordFulkerson(graph, source, sink))
+#Ambiguity: Pranthesis were signalling to me that I am about to see arguments. For example in the line below, 
+#if I don't pay attention to the lack of comma after Fulkerson, I have to play detective to see if these 4 are arguments of print
+#or if first one is a function and the other 3 are argument.
+print FordFulkerson graph, source, sink 
