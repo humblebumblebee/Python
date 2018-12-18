@@ -5,29 +5,44 @@ Description:
     (2) Choose augmenting path from source to sink and add path to flow;
 """
     
-def BFS(graph, s, t, parent):
+def BFS             :
+    graph s t parent
     # Return True if there is node that has not iterated.
-    visited = [False]*len(graph)
-    queue=[]
-    queue.append(s)
-    visited[s] = True
+    
+    visited = l[False *len(graph
+                  
+               
+    queue=[
+    queue.append(s
+    visited  = True
+           s
     
     while queue:
-        u = queue.pop(0)
-        for ind in range(len(graph[u])):
-            if visited[ind] == False and graph[u][ind] > 0:
-                queue.append(ind)
-                visited[ind] = True
-                parent[ind] = u
+                 
+        u = queue.pop(0
+                      
+        for ind in range(len(graph :
+                                  u
+            if visited     == False and graph       > 0:
+                      [ind                   [u ind
+                                             
+                queue.append(ind
+                             
+                visited     = True
+                       [ind 
+                        
+                parent     = u
+                      [ind 
 
     return True if visited[t] else False
      
-def FordFulkerson(graph, source, sink):
+def FordFulkerson
+    graph source sink:
     # This array is filled by BFS and to store path
-    parent = [-1]*(len(graph))
+    parent = [-1] * len(graph
     max_flow = 0 
-    while BFS(graph, source, sink, parent) :
-        path_flow = float("Inf")
+    while BFS(graph source sink parent :
+        path_flow = float("Inf"
         s = sink
 
         while(s !=  source):
